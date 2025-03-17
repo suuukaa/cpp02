@@ -1,35 +1,29 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed() : fp_value(0){
-    std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &copy){
     *this = copy;
-    std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed& Fixed::operator=(const Fixed &copy){
-    std::cout << "Copy assignment operator called" << std::endl;
     if(this != &copy)
         this->fp_value = copy.fp_value;
     return (*this);
 }
 
 Fixed::~Fixed(){
-    std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const int integer){
 
     fp_value = integer << n_bits;
-    std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float number){
 
     fp_value = roundf(number * (1 << n_bits));
-    std::cout << "Float constructor called" << std::endl;
 }
 
 float Fixed::toFloat(void) const{
@@ -101,9 +95,9 @@ const Fixed Fixed::operator--(int){
     return tmp;
 }
 
-Fixed Fixed::operator--(void){
+Fixed Fixed::operator++(void){
 
-    this->fp_value--;
+    this->fp_value++;
     return *this;
 }
 
@@ -111,4 +105,20 @@ Fixed Fixed::operator--(void){
 
     this->fp_value--;
     return *this;
+}
+
+Fixed &Fixed::max(Fixed &a, Fixed &b) {
+    return (a > b ? a : b);
+}
+
+const Fixed &Fixed::max(const Fixed &a, const Fixed &b) {
+    return (a > b ? a : b);
+}
+
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b) {
+    return (a < b ? a : b);
+}
+
+Fixed &Fixed::min(Fixed &a, Fixed &b) {
+    return (a < b ? a : b);
 }

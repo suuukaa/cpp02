@@ -18,20 +18,24 @@ class Fixed{
         Fixed   &operator=(const Fixed &copy); // copy assignment operator
         float toFloat(void) const;
         int toInt(void) const;
-        bool Fixed::operator<(const Fixed &other) const;
-        bool Fixed::operator>(const Fixed &other) const;
-        bool Fixed::operator>=(const Fixed &other) const;
-        bool Fixed::operator<=(const Fixed &other) const;
-        bool Fixed::operator==(const Fixed &other) const;
-        bool Fixed::operator!=(const Fixed &other) const;
-        Fixed Fixed::operator+(const Fixed &other) const;
-        Fixed Fixed::operator-(const Fixed &other) const;
-        Fixed Fixed::operator*(const Fixed &other) const;
-        Fixed Fixed::operator/(const Fixed &other) const;
-        const Fixed Fixed::operator++(int);
-        const Fixed Fixed::operator--(int);
-        Fixed Fixed::operator++(void);
-        Fixed Fixed::operator--(void);
+        bool operator<(const Fixed &other) const;
+        bool operator>(const Fixed &other) const;
+        bool operator>=(const Fixed &other) const;
+        bool operator<=(const Fixed &other) const;
+        bool operator==(const Fixed &other) const;
+        bool operator!=(const Fixed &other) const;
+        Fixed operator+(const Fixed &other) const;
+        Fixed operator-(const Fixed &other) const;
+        Fixed operator*(const Fixed &other) const;
+        Fixed operator/(const Fixed &other) const;
+        const Fixed operator++(int);
+        const Fixed operator--(int);
+        Fixed operator++(void);
+        Fixed operator--(void);
+        static Fixed &max(Fixed &a, Fixed &b);
+        static const Fixed &max(const Fixed &a, const Fixed &b);
+        static Fixed &min(Fixed &a, Fixed &b);
+        static const Fixed &min(const Fixed &a, const Fixed &b);
 };
 
 std::ostream& operator<<(std::ostream &out, const Fixed &fixed);
