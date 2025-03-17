@@ -18,9 +18,22 @@ class Fixed{
         Fixed   &operator=(const Fixed &copy); // copy assignment operator
         float toFloat(void) const;
         int toInt(void) const;
+        bool Fixed::operator<(const Fixed &other) const;
+        bool Fixed::operator>(const Fixed &other) const;
+        bool Fixed::operator>=(const Fixed &other) const;
+        bool Fixed::operator<=(const Fixed &other) const;
+        bool Fixed::operator==(const Fixed &other) const;
+        bool Fixed::operator!=(const Fixed &other) const;
+        Fixed Fixed::operator+(const Fixed &other) const;
+        Fixed Fixed::operator-(const Fixed &other) const;
+        Fixed Fixed::operator*(const Fixed &other) const;
+        Fixed Fixed::operator/(const Fixed &other) const;
+        const Fixed Fixed::operator++(int);
+        const Fixed Fixed::operator--(int);
+        Fixed Fixed::operator++(void);
+        Fixed Fixed::operator--(void);
 };
 
 std::ostream& operator<<(std::ostream &out, const Fixed &fixed);
-bool Fixed::operator<(const Fixed &other) const;
 
 #endif

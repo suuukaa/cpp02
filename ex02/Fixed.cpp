@@ -50,3 +50,65 @@ bool Fixed::operator<(const Fixed &other) const {
     return this->fp_value < other.fp_value;
 }
 
+bool Fixed::operator>(const Fixed &other) const {
+    return this->fp_value > other.fp_value;
+}
+
+bool Fixed::operator>=(const Fixed &other) const {
+    return this->fp_value >= other.fp_value;
+}
+
+bool Fixed::operator<=(const Fixed &other) const {
+    return this->fp_value <= other.fp_value;
+}
+
+bool Fixed::operator==(const Fixed &other) const {
+    return this->fp_value == other.fp_value;
+}
+
+bool Fixed::operator!=(const Fixed &other) const {
+    return this->fp_value != other.fp_value;
+}
+
+Fixed Fixed::operator+(const Fixed &other) const {
+    return Fixed(this->toFloat() + other.toFloat());
+}
+
+Fixed Fixed::operator-(const Fixed &other) const {
+    return Fixed(this->toFloat() - other.toFloat());
+}
+
+Fixed Fixed::operator*(const Fixed &other) const {
+    return Fixed(this->toFloat() * other.toFloat());
+}
+
+Fixed Fixed::operator/(const Fixed &other) const {
+    return Fixed(this->toFloat() / other.toFloat());
+}
+
+const Fixed Fixed::operator++(int){
+
+    Fixed tmp = *this;
+    this->fp_value++;
+    return tmp;
+}
+
+
+const Fixed Fixed::operator--(int){
+
+    Fixed tmp = *this;
+    this->fp_value--;
+    return tmp;
+}
+
+Fixed Fixed::operator--(void){
+
+    this->fp_value--;
+    return *this;
+}
+
+Fixed Fixed::operator--(void){
+
+    this->fp_value--;
+    return *this;
+}
