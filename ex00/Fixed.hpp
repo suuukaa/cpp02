@@ -8,15 +8,13 @@ class Fixed{
     static const int n_bits =  8;
 
     public :
-        Fixed(); // constractur
-        Fixed(const Fixed &copy); // copy constractur
-        Fixed   &operator=(const Fixed &copy); // copy assignment operator
-        ~Fixed(); //destractur
+        Fixed();
+        Fixed(const Fixed &copy);
+        Fixed   &operator=(const Fixed &copy);
+        ~Fixed();
 
         int     getRawBits( void ) const;
         void    setRawBits(int const raw);
-
-        
 
 
 };

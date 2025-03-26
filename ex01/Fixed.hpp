@@ -9,15 +9,15 @@ class Fixed{
     static const int n_bits =  8;
 
     public :
-        Fixed(); // constructor
-        Fixed(const Fixed &copy); // copy constructor
-        Fixed(const int integer); // int constructor
-        Fixed(const float number); // float constructor
-        ~Fixed(); //destructor
+        Fixed();
+        Fixed(const Fixed &copy);
+        Fixed(const int integer);
+        Fixed(const float number);
+        ~Fixed(); 
         
-        Fixed   &operator=(const Fixed &copy); // copy assignment operator
-        float toFloat(void) const;
-        int toInt(void) const;
+        Fixed   &operator=(const Fixed &copy);
+        float   toFloat(void) const;
+        int     toInt(void) const;
 };
 
 std::ostream& operator<<(std::ostream &out, const Fixed &fixed);
